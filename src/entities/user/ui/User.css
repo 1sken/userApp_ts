@@ -1,0 +1,42 @@
+.userCard{
+	margin: 10px;	
+
+	width: 400px;
+	background-image: url("https://images.unsplash.com/photo-1548217395-6c6095abb49c?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+	background-size: cover;
+	background-repeat: no-repeat;
+  background-position: center;
+}
+.userBlackBg{
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.639);
+	color: white;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.userBlackBg h2{
+	font-size: 32px;
+	font-weight: 700;
+}
+.userBlackBg p{
+	font-size: 17px;
+}
+.userBtn{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15px;
+}
+.userBtn button{
+	padding:5px 15px;
+	width: 40%;
+	background-color: transparent;
+	color: white;
+	transition:linear 500ms;
+}
+.deleteBtn:hover{
+	background-color: rgba(135, 0, 0, 0.812);
+}
+.changeBtn:hover{
+	background-color: rgba(3, 72, 100, 0.683);
+}

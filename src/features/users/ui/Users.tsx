@@ -1,20 +1,19 @@
 import { User } from "@/entities";
-import { deleteData, getData, getUsersApi } from "../model/localSrage";
-import { useEffect } from "react";
+import { IUser } from "@/entities/user";
+import useLocalStorage from "../model/useLocalStorage";
 
 function Users() {
-  const users = getData();
-  const handleDeleteUser = (id:number) => {
-    deleteData(id);
+  const { userList, deleteData } = useLocalStorage(); 
+
+  const handleDeleteUser = (id: number) => {
+    deleteData(id); 
   };
-  useEffect(()=>{
-    getUsersApi();
-  }, [])
+
   return (
     <div>
-      <h2>User List:</h2>
-      <ul>
-        {users && users.map((user) => (
+      <h2 style={{fontSize:50, textAlign:'center'}}>User List:</h2>
+      <ul style={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
+        {userList.map((user: IUser) => ( 
           <li key={user.id}>
             <User user={user} onDelete={() => handleDeleteUser(user.id)} />
           </li>
