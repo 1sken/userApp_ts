@@ -6,7 +6,7 @@ function Users() {
   const { userList, deleteData } = useLocalStorage(); 
 
   const handleDeleteUser = (id: number) => {
-    deleteData(id); 
+    deleteData(id);
   };
 
   return (

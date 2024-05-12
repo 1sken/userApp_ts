@@ -14,17 +14,18 @@ const useLocalStorage = () => {
     }
   };
 
-
   const deleteData = (userId: number): void => {
     setUserList(prevUsers =>
       prevUsers.filter(user => user.id !== userId)
     );
+    const updatedUsersData = userList.filter(user => user.id !== userId);
+    localStorage.setItem('users', JSON.stringify(updatedUsersData));
   };
 
   const getUsersApi = async (): Promise<void> => {
     try {
       const usersData = localStorage.getItem('users');
-      if (!usersData) {
+      if (!usersData || JSON.parse(usersData).length === 0) { 
         const response = await axios.get('https://jsonplaceholder.typicode.com/users');
         const fetchedUsers: IUser[] = response.data;
         setUserList(fetchedUsers);
@@ -49,5 +50,4 @@ const useLocalStorage = () => {
 
   return { userList, deleteData };
 };
-
 export default useLocalStorage;
