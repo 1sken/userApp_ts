@@ -1,2 +1,3 @@
 import User from './user/ui/User';
-export{User}
+import FormUser from './formUser/ui/FormUser';
+export{User, FormUser}

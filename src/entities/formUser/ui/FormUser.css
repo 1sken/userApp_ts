@@ -1,0 +1,44 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: -3px;
+  left: -5px;
+  z-index: 3;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.326);
+  width: 110%;
+  height: 110%;
+}
+.changeCard {
+  width: 600px;
+  height: 367px;
+  text-align: center;
+  background-image: url("https://media.istockphoto.com/id/1084690262/photo/karavanke-and-kamnisko-savinjske-alpe-ranges-above-sea-of-clouds-and-fog-lit-by-glowing-red.webp?s=170667a&w=0&k=20&c=zPwtiiB1xlv59M3w0UEE-IONWav-7FVZ-FpEuYjqHbg=");
+  background-size: cover;
+	background-repeat: no-repeat;
+  background-position: center;
+  
+}
+label{
+  width:200px;
+}
+label input{
+  margin: 10px;
+}
+.overlayForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlayForm button{
+  padding: 10px 50px;
+  background-color: transparent;
+  color: white;
+  transition: linear 500ms;
+}
+
+.overlayForm button:hover{
+  background-color:#03b27294;
+}

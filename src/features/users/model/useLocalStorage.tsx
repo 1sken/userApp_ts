@@ -13,15 +13,24 @@ const useLocalStorage = () => {
       return null;
     }
   };
-
   const deleteData = (userId: number): void => {
-    setUserList(prevUsers =>
-      prevUsers.filter(user => user.id !== userId)
-    );
+    setUserList(prevUsers => prevUsers.filter(user => user.id !== userId));
+  
     const updatedUsersData = userList.filter(user => user.id !== userId);
     localStorage.setItem('users', JSON.stringify(updatedUsersData));
+    getUsersApi()
   };
-
+  
+  const changeData = (updatedUser: IUser): void => {
+    setUserList(prevUsers => prevUsers.map(user => user.id === updatedUser.id ? updatedUser : user));
+  
+    const updatedUsersData = userList.map(user => user.id === updatedUser.id ? updatedUser : user);
+    localStorage.setItem('users', JSON.stringify(updatedUsersData));
+    getUsersApi()
+  };
+  
+  
+  
   const getUsersApi = async (): Promise<void> => {
     try {
       const usersData = localStorage.getItem('users');
@@ -48,6 +57,6 @@ const useLocalStorage = () => {
     }
   }, []);
 
-  return { userList, deleteData };
+  return { userList, deleteData, changeData };
 };
 export default useLocalStorage;
