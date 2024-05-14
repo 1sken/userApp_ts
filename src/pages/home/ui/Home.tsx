@@ -1,4 +1,4 @@
-import { UserList } from "@/widgets"
+import { UserList } from "@/widgets/userList"
 
 function Home() {
 	return (

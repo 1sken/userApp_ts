@@ -1,4 +1,4 @@
-import { Users } from "@/features"
+import { Users } from "@/features/users"
 
 function UserList() {
 	return (

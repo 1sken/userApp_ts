@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { FormUser, User } from '@/entities';
-import { IUser } from '@/entities/user';
+import { FormUser} from '@/entities/formUser';
+import { IUser, User } from '@/entities/user';
 import useLocalStorage from '../model/useLocalStorage';
 
 function Users() {
