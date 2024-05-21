@@ -1,2 +1,2 @@
-import UserList from './ui/UserList/UserList';
+import  UserList  from './ui/UserList';
 export {UserList}
